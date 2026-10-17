@@ -1,0 +1,719 @@
+/* ==========================================================================
+   SwissAuto.ae-Inspired Header & Navbar System (Luxury Off-White Theme)
+   ========================================================================== */
+
+/* Main Sticky Navbar (Clean Luxury White) */
+.alpha-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 850;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.alpha-navbar--scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border-bottom-color: var(--border-card);
+}
+
+.alpha-navbar__container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: var(--header-height);
+  position: relative;
+}
+
+/* Logo (Left Column) */
+.alpha-navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  justify-self: start;
+}
+
+.alpha-navbar__logo-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.alpha-navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.alpha-navbar__brand-name {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.alpha-navbar__brand-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+}
+
+/* Center Desktop Navigation - Perfectly Centered in Middle of Navbar */
+.alpha-navbar__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+}
+
+.alpha-navbar__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.alpha-navbar__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+}
+
+.alpha-navbar__link {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.45rem 0.35rem;
+  border-radius: var(--radius-xs);
+  position: relative;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+/* Subtle Red Indicator Underline directly under link */
+.alpha-navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 0.35rem;
+  right: 0.35rem;
+  height: 2.5px;
+  border-radius: 2px;
+  background-color: var(--accent-primary);
+  opacity: 0;
+  transform: scaleX(0);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.alpha-navbar__link:hover {
+  color: var(--accent-primary);
+}
+
+.alpha-navbar__link:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.alpha-navbar__link--active {
+  color: var(--accent-primary);
+}
+
+.alpha-navbar__link--active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.alpha-navbar__chevron {
+  transition: transform var(--transition-fast);
+  color: var(--text-muted);
+}
+
+.alpha-navbar__item--has-dropdown:hover .alpha-navbar__chevron {
+  transform: rotate(180deg);
+  color: var(--accent-primary);
+}
+
+/* 3. Sleek, Minimal Dropdowns (Snug to the Navbar Item) */
+.alpha-mega-menu {
+  position: absolute;
+  top: calc(100% - 12px); /* Directly below the link element */
+  left: 50%;
+  transform: translateX(-50%) translateY(2px);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+  z-index: 950;
+  overflow: hidden;
+}
+
+/* Invisible hover bridge to prevent accidental closure */
+.alpha-mega-menu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
+.alpha-mega-menu--brands {
+  width: 260px;
+}
+
+.alpha-mega-menu--services {
+  width: 320px;
+}
+
+.alpha-mega-menu--packages {
+  width: 330px;
+}
+
+.alpha-mega-menu--open,
+.alpha-navbar__item--has-dropdown:hover .alpha-mega-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Clean, Minimal Dropdown List */
+.alpha-dropdown-menu__list {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Dropdown Item */
+.alpha-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-xs);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.15s ease;
+  background: transparent;
+}
+
+.alpha-dropdown-item:hover {
+  background-color: #F5F7FA;
+  color: var(--accent-primary);
+  padding-left: 1rem;
+}
+
+.alpha-dropdown-item__text {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.alpha-dropdown-item__arrow {
+  color: var(--text-muted);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.alpha-dropdown-item:hover .alpha-dropdown-item__arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--accent-primary);
+}
+
+/* Service Item with subtle icon */
+.alpha-dropdown-item__icon-wrap {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-xs);
+  background: rgba(224, 20, 36, 0.08);
+  color: var(--accent-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.65rem;
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}
+
+.alpha-dropdown-item:hover .alpha-dropdown-item__icon-wrap {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+}
+
+/* Package Item with price */
+.alpha-dropdown-item--package {
+  align-items: center;
+  padding: 0.75rem 0.85rem;
+}
+
+.alpha-dropdown-item__pkg-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.alpha-dropdown-item__pkg-tag {
+  font-size: 0.725rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.alpha-dropdown-item__pkg-price {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+}
+
+/* Minimal Footer in Dropdown */
+.alpha-dropdown-menu__footer {
+  border-top: 1px solid var(--border-subtle);
+  background: #FAFBFC;
+  padding: 0.65rem 0.85rem;
+}
+
+.alpha-dropdown-menu__all-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.alpha-dropdown-menu__all-link:hover {
+  color: var(--accent-hover);
+}
+
+.alpha-dropdown-menu__all-link svg {
+  transition: transform 0.15s ease;
+}
+
+.alpha-dropdown-menu__all-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* Language Selector */
+.alpha-navbar__lang-btn {
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.4rem 0.45rem;
+  margin-left: 0.4rem;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-fast);
+}
+
+html[dir='rtl'] .alpha-navbar__lang-btn {
+  margin-left: 0;
+  margin-right: 0.4rem;
+}
+
+.alpha-navbar__lang-btn:hover {
+  color: var(--accent-primary);
+  background: var(--bg-primary);
+}
+
+.alpha-navbar__lang-flag {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.alpha-lang-dropdown {
+  position: absolute;
+  top: calc(100% - 6px);
+  right: 0;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  min-width: 155px;
+  padding: 0.4rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+  transform: translateY(4px);
+  z-index: 920;
+}
+
+.alpha-lang-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.alpha-lang-dropdown--open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.alpha-lang-dropdown__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  padding: 0.55rem 0.75rem;
+  background: none;
+  border: none;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.alpha-lang-dropdown__item:hover {
+  background: var(--bg-primary);
+  color: var(--accent-primary);
+}
+
+.alpha-lang-dropdown__item--active {
+  background: rgba(224, 20, 36, 0.08);
+  color: var(--accent-primary);
+}
+
+/* Mobile Drawer Language Row */
+.alpha-mobile-drawer__lang-row {
+  padding: 0.5rem 0;
+}
+
+.alpha-mobile-drawer__lang-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.alpha-mobile-drawer__lang-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.alpha-mobile-lang-chip {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.alpha-mobile-lang-chip--active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #FFFFFF;
+}
+
+/* 4. Rounded Corner Red CTA Button */
+.alpha-swiss-skew-btn {
+  transform: skew(-10deg);
+  -webkit-transform: skew(-10deg);
+  background-color: var(--accent-primary);
+  color: #FFFFFF;
+  padding: 0.65rem 1.45rem;
+  border-radius: 8px; /* Smooth rounded corners */
+  box-shadow: 0 4px 14px rgba(224, 20, 36, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: none;
+  margin-left: 0.4rem;
+}
+
+.alpha-swiss-skew-btn:hover {
+  background-color: var(--accent-hover);
+  box-shadow: 0 6px 20px rgba(224, 20, 36, 0.45);
+  transform: skew(-10deg) translateY(-2px);
+  color: #FFFFFF;
+}
+
+.alpha-swiss-skew-btn__inner {
+  transform: skew(10deg);
+  -webkit-transform: skew(10deg);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.885rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.alpha-swiss-skew-btn--full {
+  width: 100%;
+}
+
+/* Right Actions (Book Now CTA & Mobile Hamburger) */
+.alpha-navbar__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  justify-self: end;
+  gap: 0.75rem;
+}
+
+.alpha-navbar__desktop-cta {
+  display: inline-flex;
+}
+
+/* 5. Mobile Hamburger & Drawer (Clean White Theme) */
+.alpha-navbar__hamburger {
+  display: none;
+  background: none;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.alpha-navbar__hamburger:hover {
+  background-color: var(--bg-primary);
+  color: var(--accent-primary);
+  border-color: var(--border-highlight);
+}
+
+.alpha-navbar__hamburger:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.alpha-mobile-drawer {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .alpha-navbar__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .alpha-topbar {
+    display: none;
+  }
+
+  .alpha-navbar__nav {
+    display: none;
+  }
+
+  .alpha-navbar__hamburger {
+    display: flex;
+  }
+
+  .alpha-mobile-drawer {
+    display: block;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFFFFF;
+    z-index: 750;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity var(--transition-normal), transform var(--transition-normal);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .alpha-mobile-drawer--open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .alpha-mobile-drawer__content {
+    padding: 1.5rem var(--container-padding) calc(var(--mobile-bottom-bar-height) + 2rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .alpha-mobile-drawer__menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .alpha-mobile-drawer__item {
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.65rem;
+  }
+
+  .alpha-mobile-drawer__link {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: block;
+    padding: 0.4rem 0;
+  }
+
+  .alpha-mobile-drawer__link--active {
+    color: var(--accent-primary);
+  }
+
+  .alpha-mobile-drawer__toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .alpha-mobile-drawer__sub-toggle {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  .alpha-rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  .alpha-mobile-sublist {
+    list-style: none;
+    padding: 0.75rem 0 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .alpha-mobile-sublist a {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .alpha-mobile-sublist a:hover {
+    color: var(--accent-primary);
+  }
+
+  .alpha-mobile-sublist__all {
+    color: var(--accent-primary) !important;
+    font-weight: 700 !important;
+  }
+
+  .alpha-mobile-drawer__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-card);
+  }
+
+  .alpha-mobile-drawer__direct-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .alpha-mobile-drawer__call-btn,
+  .alpha-mobile-drawer__wa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    padding: 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .alpha-mobile-drawer__call-btn {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-card);
+    color: var(--text-primary);
+  }
+
+  .alpha-mobile-drawer__wa-btn {
+    background: #25D366;
+    color: #FFFFFF;
+  }
+
+  .alpha-mobile-drawer__aux {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .alpha-mobile-drawer__aux a {
+    color: var(--text-secondary);
+  }
+}
+
+@media (max-width: 640px) {
+  .alpha-navbar__desktop-cta {
+    display: none;
+  }
+}

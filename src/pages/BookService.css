@@ -1,0 +1,152 @@
+.alpha-book-page {
+  background-color: var(--bg-primary);
+}
+
+.alpha-book-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.alpha-book-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: calc(var(--header-height) + 1.5rem);
+}
+
+.alpha-book-guarantee-card,
+.alpha-book-hours-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.alpha-book-guarantee-title {
+  font-size: 1.3rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.75rem;
+}
+
+.alpha-book-guarantee-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.alpha-book-guarantee-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.alpha-book-guarantee-list strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.alpha-book-guarantee-list p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.alpha-book-hours-card h4 {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.alpha-book-hours-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.alpha-book-hours-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.alpha-book-hours-row strong {
+  color: var(--text-primary);
+}
+
+.alpha-book-emergency-box {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  text-align: center;
+}
+
+.alpha-book-emergency-tag {
+  display: inline-block;
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.alpha-book-emergency-box p {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.alpha-book-phone-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--accent-subtle);
+  border: 1px solid rgba(224, 20, 36, 0.25);
+  color: var(--accent-primary);
+  font-weight: 700;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+  width: 100%;
+}
+
+.alpha-book-phone-link:hover {
+  background: var(--accent-primary);
+  color: var(--text-white);
+}
+
+@media (max-width: 1024px) {
+  .alpha-book-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+  .alpha-book-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .alpha-book-guarantee-card,
+  .alpha-book-hours-card {
+    padding: 1.5rem 1.25rem;
+  }
+  .alpha-book-grid {
+    gap: 1.75rem;
+  }
+}

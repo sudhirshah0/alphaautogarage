@@ -1,0 +1,198 @@
+.alpha-contact-page {
+  background-color: var(--bg-primary);
+}
+
+.alpha-contact-main-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.alpha-contact-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.alpha-contact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+}
+
+.alpha-contact-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-highlight);
+}
+
+.alpha-contact-card__icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--accent-subtle);
+  border: 1px solid rgba(224, 20, 36, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.alpha-contact-card__icon {
+  color: var(--accent-primary);
+}
+
+.alpha-contact-card__title {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.alpha-contact-card__sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.alpha-contact-card__link {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color var(--transition-fast);
+}
+
+.alpha-contact-card__link:hover {
+  color: var(--accent-hover);
+}
+
+/* Hours Box */
+.alpha-contact-hours-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.alpha-contact-hours-box__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.75rem;
+}
+
+.alpha-contact-hours-box__header h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.alpha-contact-hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.alpha-contact-hours-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.alpha-contact-hours-item strong {
+  color: var(--text-primary);
+}
+
+.alpha-contact-night-drop {
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  border: 1px solid var(--border-card);
+}
+
+.alpha-contact-night-drop strong {
+  color: var(--accent-primary);
+}
+
+.alpha-contact-form-header {
+  margin-bottom: 1.75rem;
+}
+
+.alpha-contact-form-header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.alpha-contact-form-header p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Map Section */
+.alpha-map-section {
+  padding: 4rem 0 6rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.alpha-map-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.alpha-map-frame-wrap {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-lg);
+  background: var(--bg-card);
+}
+
+@media (max-width: 1024px) {
+  .alpha-contact-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .alpha-contact-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .alpha-contact-card,
+  .alpha-contact-hours-box {
+    padding: 1.5rem 1.25rem;
+  }
+  .alpha-map-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .alpha-map-section {
+    padding: 3rem 0 4.5rem;
+  }
+}

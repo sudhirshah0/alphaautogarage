@@ -1,0 +1,301 @@
+.alpha-accessories-page {
+  background-color: var(--bg-primary);
+}
+
+.alpha-accessories-section {
+  background-color: var(--bg-primary);
+}
+
+.alpha-accessory-search-wrap {
+  max-width: 540px;
+  margin: 0 auto 1.5rem;
+}
+
+.alpha-accessory-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.alpha-accessory-search__icon {
+  position: absolute;
+  left: 1.25rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.alpha-accessory-search__input {
+  width: 100%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  padding: 0.9rem 3rem 0.9rem 3.25rem;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+}
+
+.alpha-accessory-search__input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(224, 20, 36, 0.15);
+  background: #FFFFFF;
+}
+
+.alpha-accessory-search__clear {
+  position: absolute;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.alpha-accessory-search__clear:hover {
+  color: var(--text-primary);
+}
+
+/* Grid */
+.alpha-accessories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.alpha-acc-item-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.alpha-acc-item-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.alpha-acc-item-card__img-wrap {
+  position: relative;
+  height: 200px;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.alpha-acc-item-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.alpha-acc-item-card:hover .alpha-acc-item-card__img {
+  transform: scale(1.05);
+}
+
+.alpha-acc-item-card__tag {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-xs);
+  font-size: 0.725rem;
+  font-weight: 700;
+}
+
+.alpha-acc-item-card__stock {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: #10B981;
+  color: #FFFFFF;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-xs);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.alpha-acc-item-card__body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.alpha-acc-item-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.alpha-acc-item-card__cat {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.alpha-acc-item-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--color-warning);
+  font-weight: 700;
+}
+
+.alpha-acc-item-card__rating-count {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+
+.alpha-acc-item-card__title {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.alpha-acc-item-card__desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.alpha-acc-item-card__specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+  background: var(--bg-primary);
+  border-radius: var(--radius-xs);
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--border-card);
+  flex-grow: 1;
+}
+
+.alpha-acc-item-card__spec {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.775rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.alpha-acc-item-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.alpha-acc-item-card__price-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.alpha-acc-item-card__price-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.alpha-acc-item-card__price {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+/* Install banner */
+.alpha-acc-install-banner {
+  background: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 2rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.alpha-acc-install-banner__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.alpha-acc-install-banner__item h4 {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.alpha-acc-install-banner__item p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.alpha-empty-state {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  background: #FFFFFF;
+  border: 1px dashed var(--border-highlight);
+  border-radius: var(--radius-md);
+  max-width: 580px;
+  margin: 0 auto 3rem;
+}
+
+.alpha-empty-state h3 {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.alpha-empty-state p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .alpha-accessories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .alpha-accessories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .alpha-acc-install-banner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 580px) {
+  .alpha-accessories-grid {
+    grid-template-columns: 1fr;
+  }
+}
